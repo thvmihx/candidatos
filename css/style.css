@@ -8,14 +8,14 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  background-color: #163751;
+  background: rgb(2,0,36); background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,160,181,1) 53%, rgba(9,9,121,1) 100%);
   min-height: 100vh;
 }
 
 h1 {
   text-align: center; 
   margin-bottom: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 select {
@@ -25,7 +25,7 @@ select {
   border: 1px solid #ccc;
   background-color: #e6f7ff; 
   font-size: 16px;
-  color: #333;
+  color: #000000;
   outline: none;
   margin-bottom: 20px;
   width: 350px;
@@ -33,6 +33,8 @@ select {
   margin-left: auto;
   margin-right: auto;
   display: block;
+ 
+  
 }
 
 select:hover {
@@ -62,12 +64,12 @@ select:focus {
 
 .candidatos img {
   position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%); 
-  width: 141px;
-  height: 188px;
-  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz com que a imagem preencha o card mantendo a proporção */
+  border-radius: 10px; /* Aplica o border-radius também à imagem */
 }
 
 .candidatos #facebook, .candidatos #instagram {
@@ -75,11 +77,14 @@ select:focus {
   width: 60px;
   height: 60px;
   
+ 
+
+  
 }
 
 .candidatos #instagram {
-  top: 82%;
-  left: 40%;
+  top: 87%;
+  left: 30%;
 }
 
 .candidatos #uniqueIcon {
@@ -90,13 +95,28 @@ select:focus {
 }
 
 .candidatos #facebook {
-  top: 82%;
-  left: 60%;
+  top: 87%;
+  left: 50%;
 }
+
+.candidatos #nomeUrna, 
+.candidatos #numeroUrna, 
+.candidatos #nomeCompleto, 
+.candidatos #cidade, 
+.candidatos #partidoSigla {
+ 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 3px rgba(219, 214, 214, 0.7); /* Sombra no texto para melhorar a legibilidade */
+}
+
 
 .candidatos #nomeUrna {
   position: absolute;
-  margin-top: 10px;
+  margin-top: 35px;
   top: 45%;
   left: 50%;
   transform: translateX(-50%);
@@ -112,7 +132,7 @@ select:focus {
 }
 
 .candidatos #numeroUrna {
-  margin-top: 17px;
+  margin-top: 37px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -122,7 +142,7 @@ select:focus {
 }
 
 .candidatos #nomeCompleto {
-  margin-top: 15px;
+  margin-top: 45px;
   position: absolute;
   white-space: nowrap; 
   overflow: hidden;
@@ -135,7 +155,7 @@ select:focus {
 }
 
 .candidatos #cidade {
-  margin-top: 14px;
+  margin-top: 50px;
   position: absolute;
   top: 65%;
   left: 50%;
@@ -149,7 +169,7 @@ select:focus {
 }
 
 .candidatos #partidoSigla {
-  margin-top: 10px;
+  margin-top: 55px;
   position: absolute;
   top: 70%;
   left: 50%;
@@ -163,8 +183,8 @@ select:focus {
 }
 
 footer {
-  background-color: black;
-  color: white;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 10px;
   position: fixed;
@@ -197,4 +217,4 @@ footer p {
     margin-top: auto;
   }
 
-}
+} 
