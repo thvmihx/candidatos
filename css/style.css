@@ -54,7 +54,7 @@ select:focus {
 .candidatos div {
   width: 350px;
   height: 500px;
-  background-color: #5a5e5a;
+  background-color: #808080;
   border-radius: 10px;
   position: relative;
   color: #ffffff;
