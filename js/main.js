@@ -98,7 +98,7 @@ function formatarNomeCompleto(nome) {
     return nome.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
 }
 
-// Função para adicionar os links de redes sociais, se existirem
+// Função para adicionar os links de redes sociais
 function adicionarLinksRedesSociais(perfilDiv, candidato) {
     const instagramLink = document.createElement('a');
     const instagramImg = document.createElement('img');
@@ -122,6 +122,50 @@ function adicionarLinksRedesSociais(perfilDiv, candidato) {
         perfilDiv.appendChild(facebookLink);
     }
 }
+
+// Função para adicionar os links de redes sociais, se existirem
+function adicionarLinksRedesSociais(perfilDiv, candidato) {
+    const instagramLink = document.createElement('a');
+    const instagramImg = document.createElement('img');
+    instagramImg.id = 'instagram';
+
+    let redesSociais = 0; // Contador para os ícones de redes sociais
+
+    // Verifica se o candidato tem Instagram
+    if (candidato.instagram) {
+        instagramLink.href = candidato.instagram;
+        instagramImg.src = 'images/instagram.svg';
+        instagramLink.appendChild(instagramImg);
+        perfilDiv.appendChild(instagramLink);
+        redesSociais++; // Incrementa o contador se houver Instagram
+    }
+
+    const facebookLink = document.createElement('a');
+    const facebookImg = document.createElement('img');
+    facebookImg.id = 'facebook';
+
+    // Verifica se o candidato tem Facebook
+    if (candidato.facebook) {
+        facebookLink.href = candidato.facebook;
+        facebookImg.src = 'images/facebook.svg';
+        facebookLink.appendChild(facebookImg);
+        perfilDiv.appendChild(facebookLink);
+        redesSociais++; // Incrementa o contador se houver Facebook
+    }
+
+    // Centraliza o ícone se houver apenas uma rede social
+    if (redesSociais === 1) {
+        if (candidato.instagram) {
+            instagramImg.style.left = '50%';
+            instagramImg.style.transform = 'translateX(-50%)';
+        }
+        if (candidato.facebook) {
+            facebookImg.style.left = '50%';
+            facebookImg.style.transform = 'translateX(-50%)';
+        }
+    }
+}
+
 
 // Função que é chamada quando o usuário seleciona uma cidade no select
 function selecionarCidade() {
